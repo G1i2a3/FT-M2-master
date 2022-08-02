@@ -64,7 +64,7 @@ function buildToDo(todo, index) {
   toDoShell.className = "toDoShell";
 
   var toDoText = document.createElement("span");
-  toDoText.innerHTML = this.description;
+  toDoText.innerHTML = todo.description;    //!!!!!!!!!!!!!!!!!!! LE TENGO QUE PONER TODO PORQUE COMO NO HAY NADA, SI PONGO THIS.DESCRIPTION ES UNDEFINED
   toDoText.id = index;
 
   if (todo.complete){
@@ -155,9 +155,10 @@ function addToDo() {
     toDoItems.push(toDo); // actualice mi arreglo de toDos // [{description: input.value, complete: false}]
     input.value = ""; // me queda el input vacio -->UX
     displayToDos(); // se vaa encargar de que aparezca en pantalla el nuevo elemento, en realisad
-                    // se vuelven a renderizar/mostrar todos de nuevo
   }
 }
+
+
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
 // se ejecute la función 'addToDo'
@@ -165,7 +166,8 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
-
+let add = document.querySelector("#addButton");
+add.addEventListener("click", addToDo);
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
