@@ -63,8 +63,19 @@
     display: flex;
     justify-content: center;
 
+    @media @phone{
+      .flex(column-reverse, center, center);
+      padding: 0px;
+    }
+
     .actual-text {
       width: 50%;
+
+      @media @phone{
+        width:100% ;
+        padding-left: 3px;
+        padding-right: 3px;
+      }
 
       h3 {
         margin-bottom: 10px;
@@ -75,7 +86,13 @@
       }
 
       .btn {
-        .btn(white, @btn-bg-color, 8px)
+        .btn(white, @btn-bg-color, 8px);
+
+        @media @phone {
+          width: 100%;
+          text-align: center;
+          margin-bottom: 10px;
+        }
       }
     }
 
@@ -88,6 +105,13 @@
         height: auto;
         border-radius: 10px;
       }
+
+      @media @phone{
+        width: 100%;
+        margin-left: 1px;
+        margin-right: 1px;
+        padding: 5px;
+      } 
     }
   }
 }
