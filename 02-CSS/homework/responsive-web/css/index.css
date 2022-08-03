@@ -197,6 +197,11 @@ footer {
 .home .intro p {
   padding: 0 15px;
 }
+.home .intro img {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 20px;
+}
 .home .music-images {
   display: flex;
   flex-wrap: wrap;
@@ -207,6 +212,15 @@ footer {
   margin: 20px 2.5%;
   border-radius: 20px;
   height: 100%;
+}
+@media "(max-width: 500px)" {
+  .home .music-images .ondas,
+  .home .music-images .tecnologia {
+    display: none;
+  }
+  .home .music-images .auricular {
+    width: 100%;
+  }
 }
 .home .musica-nueva {
   padding: 15px;
@@ -232,6 +246,21 @@ footer {
 }
 .home .actual .actual-text p {
   margin-bottom: 26px;
+}
+.home .actual .actual-text .btn {
+  font-size: 20px;
+  font-weight: 300;
+  background-color: #22283A;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+  cursor: pointer;
+}
+.home .actual .actual-text .btn:hover {
+  background-color: white;
+  color: #22283A;
 }
 .home .actual .actual-img {
   width: 46%;

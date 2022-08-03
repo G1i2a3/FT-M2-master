@@ -12,6 +12,13 @@
       padding:0 15px;
     }
 
+    img {
+      width: 100%;
+      margin-top: 5px;
+      .roundImg(20px)
+
+    }
+
   }
 
   .music-images {
@@ -25,6 +32,16 @@
       border-radius: 20px;
       height: 100%;
     }
+
+    @media @phone {
+      .ondas, .tecnologia{
+        display: none;
+      }
+      .auricular{
+        width: 100%;
+      }
+    }
+    
   }
 
   .musica-nueva {
@@ -58,6 +75,7 @@
       }
 
       .btn {
+        .btn(white, @btn-bg-color, 8px)
       }
     }
 

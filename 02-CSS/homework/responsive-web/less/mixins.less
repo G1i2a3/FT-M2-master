@@ -1,7 +1,44 @@
 // Mixins acá
+
+// Mixins es tipo tengo dos marcadores iguales pero de dos colores diferentes, pero el resto es igual
+// entonces si querria hacer un mixins del marcador haria asi:
+
+// .marcador(@color){
+//  radio: 5px;
+//  tapa: true;
+//  tinta: @color
+//  }
+
+//.marcador(rosa)
+//.marcador(azul)
+
+
 .flex(@direction:column, @justify, @align){
     display: flex;
     flex-direction: @direction;
     justify-content: @justify;
     align-items: @align;
+}
+
+.roundImg(@radius){
+    border-radius: @radius;
+}
+
+.btn(@color, @background, @border){
+    font-size: 20px;
+    font-weight: 300;
+
+    background-color: @background;
+    color: @color;
+    border-radius: @border;
+    border: 1px solid black;
+    display: inline-block;
+
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover{  // ESTO HACE QUE EL BOTON CAMBIE DE COLOR CUANDO PASO EL CURSOR POR ARRIBA
+        background-color: @color;
+        color: @background;
+    }
 }
