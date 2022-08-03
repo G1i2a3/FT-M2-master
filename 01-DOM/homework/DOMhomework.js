@@ -60,7 +60,7 @@ function buildToDo(todo, index) {
   // todo = {description : description, complete: true/false}
 
   // Tu código acá:
-  var toDoShell = document.createElement("div");
+  var toDoShell = document.createElement("div");  
   toDoShell.className = "toDoShell";
 
   var toDoText = document.createElement("span");
