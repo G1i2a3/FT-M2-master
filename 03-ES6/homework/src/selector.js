@@ -9,7 +9,7 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   // usa matchFunc para identificar elementos que matchien
 
   // TU CÓDIGO AQUÍ
-  
+    
 };
 
 // Detecta y devuelve el tipo de selector
