@@ -45,13 +45,13 @@ let deleteFriend = function (){
             url:`${URL}/${id}`,
             type:"DELETE",
             success: function(){
-                $('#success').text(`Tu amigo, ${friend} fue eliminado con exito`);
+                $('#success').text(`Tu amigo, ${friend.name} fue eliminado con exito`);
                 $('#inputDelete').val("");
                 showFriends();
             }
         })
     } else {
-        
+        $('#success').text("Tenes que ingresar un ID")
     }
 };
 
