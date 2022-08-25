@@ -5,7 +5,6 @@ export default function SearchBar(props) {
   return (
     <div>
       <input type= "text" placeholder='Ciudad...' />
-      <p>GIANNINA</p>
       <button onClick={()=> props.onSearch("Buscando Ciudad")}>Agregar</button>
     </div>
   )

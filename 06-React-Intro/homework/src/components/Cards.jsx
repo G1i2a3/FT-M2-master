@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 
-export default function Cards({props}) {
+export default function Cards(props) {
   // props = {cities}
   // cities = [{}, {}, {}]
   // acá va tu código
