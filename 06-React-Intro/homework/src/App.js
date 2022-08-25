@@ -6,8 +6,13 @@ import SearchBar from './components/SearchBar.jsx';
 import data, { Cairns } from './data.js';
 
 function App() {
-  return (
+  return(
     <div className="App">
+      <div>
+        <SearchBar
+          onSearch={(ciudad) => alert(ciudad)}
+        />
+      </div>
       <div>
         <Card
           max={Cairns.main.temp_max}
@@ -24,12 +29,7 @@ function App() {
         />
       </div>
       <hr />
-      <div>
-        <SearchBar
-          onSearch={(ciudad) => alert(ciudad)}
-        />
-      </div>
-    </div>
+     </div>
   );
 }
 
