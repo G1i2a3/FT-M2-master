@@ -1,0 +1,47 @@
+.btn{
+    background-color: orangered;
+    width: 25px;
+    border-radius: 10px;
+    margin: 5px;
+    align-self: center;     
+}
+
+.btnColor{
+    color: white;
+}
+
+.btn:hover{
+    color: red;
+    background-color: white;
+}
+
+.middleDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-content: center;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 330px;
+    background-color: #0C97EC;
+    
+}
+
+.cardDifferent{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    align-content: center;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 330px;
+    background-color: #F7E24D;
+    
+}

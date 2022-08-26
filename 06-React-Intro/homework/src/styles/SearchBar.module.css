@@ -1,0 +1,19 @@
+.container{
+    padding-right: 5px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.btn{
+    color: black;
+    background-color: lightgreen;
+    
+}
+
+.btn:hover{
+    background-color: white;
+    color: green;
+    
+}
