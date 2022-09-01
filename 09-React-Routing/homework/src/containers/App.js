@@ -3,8 +3,12 @@ import React, { useState } from 'react';
 import './App.css';
 import Nav from '../components/Nav.jsx';
 import Cards from '../components/Cards.jsx';
+import About from '../components/About';
+import City from '../components/City';
 
-const apiKey = 'Aqui va la API key que creaste';
+import { Route, Switch } from 'react-router-dom';
+
+const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -13,13 +17,13 @@ function App() {
   }
   function onSearch(ciudad) {
     //Llamado a la API del clima
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&units=metric`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
           const ciudad = {
-            min: Math.round(recurso.main.temp_min),
-            max: Math.round(recurso.main.temp_max),
+            min: Math.floor(recurso.main.temp_min),
+            max: Math.floor(recurso.main.temp_max),
             img: recurso.weather[0].icon,
             id: recurso.id,
             wind: recurso.wind.speed,
@@ -37,23 +41,16 @@ function App() {
       });
   }
   function onFilter(ciudadId) {
-    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
-    if(ciudad.length > 0) {
-        return ciudad[0];
-    } else {
-        return null;
-    }
+    let ciudad = cities.find(c => c.id === parseInt(ciudadId));
+    return ciudad;
   }
+
   return (
     <div className="App">
-      <Nav onSearch={onSearch}/>
-      <div>
-        <Cards
-          cities={cities}
-          onClose={onClose}
-        />
-      </div>
-      <hr />
+      <Route path={'/'} render={()=><Nav onSearch={onSearch}/>}/>
+      <Route exact path={'/'} render={()=><Cards cities={cities} onClose={onClose}/>}/>
+      <Route exact path={'/about'} render={()=><About />}/>
+      <Route path={'/city/:cityId'} render={({match})=><City city={onFilter(match.params.cityId)}/>} />
     </div>
   );
 }
