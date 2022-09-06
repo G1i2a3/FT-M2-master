@@ -1,5 +1,9 @@
 const { INCREMENTO, DECREMENTO } = require('../action-types');
 
+// {...state, new_state} ----> concatenando !
+// {...state, contador:5} ----> copio state y reemplazo el valor de la propiedad contador
+
+
 const initialState = {
   contador: 0
 }
