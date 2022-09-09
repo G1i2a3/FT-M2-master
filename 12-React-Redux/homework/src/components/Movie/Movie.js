@@ -1,22 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getMovieDetail } from '../../actions/index';
-
 import './Movie.css';
 
 class Movie extends React.Component {
-
-
+    
+    componentDidMount() {
+        // console.log("Estoy en el divmount");
+        const movieID = this.props.match.params.id;
+        this.props.getMovieDetail(movieID); // -> aca de despacha la accion -> se llena el estadp de movieDetail
+    }
 
     render() {
-        return (
+        return (     
+            // console.log("HOLAAAA", this.props.movie),   
             <div className="movie-detail">
-                Detalle de la pelicula  
+                <h1>{this.props.movie.Title}</h1>
+                <h2>{this.props.movie.Year}</h2>
+                <h2>{this.props.movie.rated}</h2>
+                <h2>{this.props.movie.Reseased}</h2>
+                <h2>{this.props.movie.Genre}</h2>
+                <img src={this.props.movie.Poster} alt=''/>
             </div>
         );
     }
 }
+function mapStateToProps(state){
+    return {
+        movie: state.movieDetail
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        getMovieDetail:movieID => dispatch(getMovieDetail(movieID))
+    }
+}
 
 
-
-export default (Movie);
+export default connect (mapStateToProps, mapDispatchToProps)(Movie);
